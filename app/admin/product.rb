@@ -1,4 +1,5 @@
 ActiveAdmin.register Product do
+  permit_params :code, :pic, :name, :pv, :bv, :price, :suggest_price
 
 
   # See permitted parameters documentation:
