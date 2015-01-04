@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+
   resources :own_products
 
   devise_for :admin_users, ActiveAdmin::Devise.config
