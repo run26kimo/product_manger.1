@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @own_product.product %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @own_product.user %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @own_product.count %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @own_product.memo %>
+</p>
+
+<%= link_to 'Edit', edit_own_product_path(@own_product) %> |
+<%= link_to 'Back', own_products_path %>

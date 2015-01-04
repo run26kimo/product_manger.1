@@ -1,0 +1,14 @@
+<%= simple_form_for(@own_product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :product %>
+    <%= f.association :user %>
+    <%= f.input :count %>
+    <%= f.input :memo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
