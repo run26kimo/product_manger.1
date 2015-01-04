@@ -1,4 +1,5 @@
 ActiveAdmin.register OwnProduct do
+  permit_params :count, :memo
 
 
   # See permitted parameters documentation:
