@@ -1,39 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Product %></h1>
+</div>
 
-<p>
-  <strong>Code:</strong>
-  <%= @product.code %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:code) %></dt>
+      <dd><pre class="prettyprint"><%= @product.code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pic) %></dt>
+      <dd><pre class="prettyprint"><%= @product.pic %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @product.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pv) %></dt>
+      <dd><pre class="prettyprint"><%= @product.pv %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:bv) %></dt>
+      <dd><pre class="prettyprint"><%= @product.bv %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:price) %></dt>
+      <dd><pre class="prettyprint"><%= @product.price %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:suggest_price) %></dt>
+      <dd><pre class="prettyprint"><%= @product.suggest_price %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Pic:</strong>
-  <%= @product.pic %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              products_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_product_path(@product), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              product_path(@product),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Pv:</strong>
-  <%= @product.pv %>
-</p>
-
-<p>
-  <strong>Bv:</strong>
-  <%= @product.bv %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Suggest price:</strong>
-  <%= @product.suggest_price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>

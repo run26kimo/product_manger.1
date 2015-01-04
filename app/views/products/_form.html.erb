@@ -1,17 +1,52 @@
-<%= simple_form_for(@product) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :code %>
-    <%= f.input :pic %>
-    <%= f.input :name %>
-    <%= f.input :pv %>
-    <%= f.input :bv %>
-    <%= f.input :price %>
-    <%= f.input :suggest_price %>
+<%= form_for @product, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :code, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :code, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pic, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :pic, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pv, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :pv, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :bv, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :bv, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :price, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :suggest_price, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :suggest_price, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  products_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
